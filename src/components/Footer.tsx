@@ -21,13 +21,13 @@ export default function Footer() {
             data-pencil-name="Fee Label"
             className="text-[10px] font-semibold tracking-[1.6px] text-[#A79A8F] uppercase"
           >
-            TRANSPARENT FEES
+            BIAYA TRANSPARAN
           </span>
           <h4
             data-pencil-name="Fee Title"
             className="text-[20px] sm:text-[24px] font-semibold text-[#EDE4DD]"
           >
-            Know the landed cost before you commit.
+            Ketahui total estimasi biaya sebelum Anda memesan.
           </h4>
         </div>
 
@@ -35,10 +35,10 @@ export default function Footer() {
           type="button"
           onClick={() => setIsFeeCalcOpen(true)}
           data-pencil-name="Fee Calculator Button"
-          className="h-[46px] px-6 bg-[#EDE4DD] hover:bg-white text-[#131110] text-[13px] font-medium rounded-[2px] transition-colors cursor-pointer flex items-center gap-2"
+          className="h-[46px] px-6 bg-[#fec201] hover:bg-[#eab300] text-[#131110] text-[13px] font-bold rounded-[2px] transition-colors cursor-pointer flex items-center gap-2 shadow-xs"
         >
-          <span data-pencil-name="Fee Button Label">Open fee calculator</span>
-          <svg viewBox="0 0 12 12" className="w-[12px] h-[12px]" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <span data-pencil-name="Fee Button Label">Buka kalkulator biaya</span>
+          <svg viewBox="0 0 12 12" className="w-[12px] h-[12px]" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M2.5 6h7m-3-3 3 3-3 3" />
           </svg>
         </button>
@@ -56,7 +56,7 @@ export default function Footer() {
         >
           {/* Footer Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-[26px] h-[26px] rounded-full bg-[#EDE4DD] flex items-center justify-center text-[#131110] font-bold text-[13px]">
+            <div className="w-[26px] h-[26px] rounded-full bg-[#fec201] flex items-center justify-center text-[#131110] font-black text-[13px] shadow-[0_1px_4px_rgba(254,194,1,0.35)]">
               J
             </div>
             <span className="text-[17px] font-bold tracking-[3.4px] text-[#EDE4DD]">
@@ -68,7 +68,7 @@ export default function Footer() {
             data-pencil-name="Footer Tagline"
             className="text-[13px] leading-[22px] text-[#A79A8F] max-w-[340px]"
           >
-            Global personal shopping, done by travelers you can verify. Anything, from anywhere, carried home by hand.
+            Layanan titip belanja global, dibawakan oleh traveler terverifikasi. Barang apa pun, dari mana saja, dibawa langsung dengan tangan.
           </p>
 
           {/* Support Wrap */}
@@ -77,7 +77,7 @@ export default function Footer() {
             className="flex items-center gap-2 text-[12px] text-[#EDE4DD] pt-2"
           >
             <div className="w-2 h-2 rounded-full bg-[#22C55E]" />
-            <span>WhatsApp support · 08:00–22:00 WIB</span>
+            <span>Layanan WhatsApp · 08:00–22:00 WIB</span>
           </div>
 
           {/* Socials */}
@@ -98,9 +98,9 @@ export default function Footer() {
         {/* Shop Column */}
         <div data-pencil-name="Column / Shop" className="flex flex-col gap-3">
           <span className="text-[10px] font-bold tracking-[1.6px] text-[#A79A8F] uppercase">
-            SHOP
+            BELANJA
           </span>
-          {["New arrivals", "Fashion", "Food & snacks", "Beauty", "Collectibles"].map((item) => (
+          {["Koleksi terbaru", "Fashion", "Makanan & camilan", "Kecantikan", "Koleksi langka"].map((item) => (
             <button
               key={item}
               onClick={() => {
@@ -117,13 +117,13 @@ export default function Footer() {
         {/* Service Column */}
         <div data-pencil-name="Column / Service" className="flex flex-col gap-3">
           <span className="text-[10px] font-bold tracking-[1.6px] text-[#A79A8F] uppercase">
-            SERVICE
+            LAYANAN
           </span>
-          {["How it works", "Fee calculator", "Shipping & consolidation", "Track an order", "Traveler program"].map((item) => (
+          {["Cara kerja", "Kalkulator biaya", "Pengiriman & konsolidasi", "Lacak pesanan", "Program traveler"].map((item) => (
             <button
               key={item}
               onClick={() => {
-                if (item === "Fee calculator") setIsFeeCalcOpen(true);
+                if (item === "Kalkulator biaya") setIsFeeCalcOpen(true);
                 else {
                   const el = document.getElementById("how-it-works");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -139,9 +139,9 @@ export default function Footer() {
         {/* Company Column */}
         <div data-pencil-name="Column / Company" className="flex flex-col gap-3">
           <span className="text-[10px] font-bold tracking-[1.6px] text-[#A79A8F] uppercase">
-            COMPANY
+            PERUSAHAAN
           </span>
-          {["About Jastip", "Journal", "Careers", "Press", "Trust & safety"].map((item) => (
+          {["Tentang Jastip", "Jurnal", "Karier", "Media & Pers", "Keamanan & Privasi"].map((item) => (
             <button
               key={item}
               onClick={() => setIsRequestModalOpen(true)}
@@ -163,7 +163,7 @@ export default function Footer() {
         </span>
 
         <div className="flex gap-5">
-          {["Terms", "Privacy", "Cookies", "Sitemap"].map((link) => (
+          {["Syarat & Ketentuan", "Privasi", "Cookie", "Peta Situs"].map((link) => (
             <a key={link} href="#" className="hover:text-[#EDE4DD] transition-colors">
               {link}
             </a>
@@ -171,20 +171,7 @@ export default function Footer() {
         </div>
 
         <span data-pencil-name="Locale" className="font-semibold tracking-[1.3px] text-[#F4ECE5]">
-          ENGLISH · IDR
-        </span>
-      </div>
-
-      {/* Giant Wordmark */}
-      <div
-        data-pencil-name="Giant Wordmark Wrap"
-        className="box-border w-full py-4 sm:py-8 flex justify-center items-center overflow-hidden select-none pointer-events-none"
-      >
-        <span
-          data-pencil-name="Giant Wordmark"
-          className="text-[80px] sm:text-[160px] md:text-[220px] lg:text-[248px] font-bold text-[#231E1B] tracking-[-4px] sm:tracking-[-8px] leading-none"
-        >
-          JASTIP
+          INDONESIA · IDR
         </span>
       </div>
     </footer>

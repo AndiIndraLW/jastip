@@ -16,7 +16,7 @@ export default function Home() {
     <main className="w-full bg-[#EDE4DD] flex justify-center">
       <div
         data-pencil-name="Jastip — Homepage"
-        className="w-full max-w-[1440px] flex flex-col bg-[#EDE4DD] overflow-x-hidden shadow-2xl"
+        className="w-full max-w-[1440px] flex flex-col bg-[#EDE4DD] overflow-x-hidden shadow-2xl relative"
       >
         <AnnouncementBar />
         <Navbar />
@@ -27,7 +27,7 @@ export default function Home() {
         <HowItWorksSection />
         <Footer />
 
-        {/* Interactive Modals and Drawers */}
+        {/* Modals & Folios */}
         <RequestModal />
         <FeeCalculatorModal />
         <CartDrawer />

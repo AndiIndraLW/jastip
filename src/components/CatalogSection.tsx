@@ -18,8 +18,8 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     id: "bag-1",
-    name: "Structured Leather Shoulder Bag",
-    meta: "SEOUL · KR · EST. 9–12 DAYS",
+    name: "Tas Bahu Kulit Terstruktur",
+    meta: "SEOUL · KR · EST. 9–12 HARI",
     priceIdr: 1890000,
     priceUsd: 118,
     image: "/images/bag.jpg",
@@ -29,41 +29,41 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "tokyo-banana-1",
-    name: "Tokyo Banana & Kit Kat Gift Box",
-    meta: "TOKYO · JP · EST. 6–8 DAYS",
+    name: "Kotak Hadiah Tokyo Banana & KitKat",
+    meta: "TOKYO · JP · EST. 6–8 HARI",
     priceIdr: 385000,
     priceUsd: 24,
     image: "/images/tokyo_banana.jpg",
     flag: "🇯🇵",
     code: "JP",
-    category: "Food & Snacks",
+    category: "Makanan & Camilan",
   },
   {
     id: "skincare-1",
-    name: "Olive Young Skincare Best Set",
-    meta: "SEOUL · KR · EST. 9–12 DAYS",
+    name: "Paket Skincare Terbaik Olive Young",
+    meta: "SEOUL · KR · EST. 9–12 HARI",
     priceIdr: 645000,
     priceUsd: 40,
     image: "/images/skincare.jpg",
     flag: "🇰🇷",
     code: "KR",
-    category: "Beauty",
+    category: "Kecantikan",
   },
   {
     id: "sonny-angel-1",
-    name: "Sonny Angel Limited Series",
-    meta: "TOKYO · JP · EST. 7–10 DAYS",
+    name: "Sonny Angel Seri Terbatas",
+    meta: "TOKYO · JP · EST. 7–10 HARI",
     priceIdr: 520000,
     priceUsd: 32,
     image: "/images/sonny_angel.jpg",
     flag: "🇯🇵",
     code: "JP",
-    category: "Collectibles",
+    category: "Koleksi",
   },
   {
     id: "nb-530-1",
     name: "New Balance 530 'Moonbeam'",
-    meta: "SEOUL · KR · EST. 10–14 DAYS",
+    meta: "SEOUL · KR · EST. 10–14 HARI",
     priceIdr: 1240000,
     priceUsd: 77,
     image: "/images/new_balance.jpg",
@@ -73,44 +73,44 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "matcha-1",
-    name: "Ippodo Ceremonial Grade Matcha",
-    meta: "KYOTO · JP · EST. 6–8 DAYS",
+    name: "Matcha Ceremonial Grade Ippodo",
+    meta: "KYOTO · JP · EST. 6–8 HARI",
     priceIdr: 470000,
     priceUsd: 29,
     image: "/images/matcha.jpg",
     flag: "🇯🇵",
     code: "JP",
-    category: "Food & Snacks",
+    category: "Makanan & Camilan",
   },
   {
     id: "margiela-replica-1",
-    name: "Maison Margiela Replica 100ml",
-    meta: "PARIS · FR · EST. 12–16 DAYS",
+    name: "Parfum Maison Margiela Replica 100ml",
+    meta: "PARIS · FR · EST. 12–16 HARI",
     priceIdr: 2150000,
     priceUsd: 134,
     image: "/images/perfume.jpg",
     flag: "🇫🇷",
     code: "FR",
-    category: "Beauty",
+    category: "Kecantikan",
   },
 ];
 
 const CATEGORIES = [
-  { label: "All", count: 128 },
+  { label: "Semua", count: 128 },
   { label: "Fashion", count: 42 },
-  { label: "Food & Snacks", count: 31 },
-  { label: "Beauty", count: 28 },
-  { label: "Collectibles", count: 19 },
-  { label: "Tech", count: 8 },
+  { label: "Makanan & Camilan", count: 31 },
+  { label: "Kecantikan", count: 28 },
+  { label: "Koleksi", count: 19 },
+  { label: "Teknologi", count: 8 },
 ];
 
 export default function CatalogSection() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Semua");
   const [customLink, setCustomLink] = useState("");
   const { addToCart, formatPrice, currency, setIsRequestModalOpen, setRequestUrl } = useJastip();
 
   const filteredProducts =
-    activeCategory === "All"
+    activeCategory === "Semua"
       ? PRODUCTS
       : PRODUCTS.filter((p) => p.category === activeCategory);
 
@@ -126,67 +126,57 @@ export default function CatalogSection() {
     <section
       id="catalog"
       data-pencil-name="Catalog Section"
-      className="box-border w-full h-fit shrink-0 flex flex-col gap-0 px-4 sm:px-8 lg:px-[64px] pt-16 sm:pt-20 lg:pt-[104px] pb-16 sm:pb-20 lg:pb-[104px] justify-start items-start border-b border-[#D3C7BA]"
+      className="box-border w-full h-fit shrink-0 flex flex-col gap-0 px-4 sm:px-8 lg:px-[64px] pt-16 sm:pt-20 lg:pt-[88px] pb-16 sm:pb-20 lg:pb-[100px] justify-start items-start"
     >
       {/* Catalog Header */}
       <div
         data-pencil-name="Catalog Header"
-        className="box-border w-full h-fit shrink-0 flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-start md:items-end pb-8 sm:pb-[42px]"
+        className="box-border w-full h-fit shrink-0 flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-start md:items-end"
       >
         <div
           data-pencil-name="Catalog Title Block"
-          className="box-border w-full md:w-[600px] shrink-0 h-fit flex flex-col gap-0 justify-start items-start"
+          className="box-border w-full md:w-[700px] shrink-0 h-fit flex flex-col gap-[16px] justify-start items-start"
         >
-          {/* Section Index */}
+          {/* Section Label Row */}
           <div
             data-pencil-name="Section Label Row"
-            className="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] justify-start items-center mb-3 sm:mb-4"
+            className="box-border w-fit h-fit shrink-0 flex flex-row gap-[12px] justify-start items-center"
           >
             <div
-              data-pencil-name="Section Index"
-              className="text-[10.5px] text-[#5F564F] font-semibold tracking-[1.6px]"
-            >
-              01
-            </div>
-            <div
-              data-pencil-name="Label Rule"
-              className="box-border w-[24px] shrink-0 h-[1px] bg-[#D3C7BA]"
-            />
-            <div
               data-pencil-name="Section Label"
-              className="text-[10.5px] text-[#5F564F] font-semibold tracking-[1.6px]"
+              className="text-[10px]/[normal] box-border text-[#131110] font-[Inter,system-ui,sans-serif] font-semibold tracking-[1.6px] text-left uppercase whitespace-nowrap"
             >
-              CURATED DROPS
+              KATALOG PRE-ORDER
             </div>
           </div>
 
           {/* Catalog Title */}
           <h2
             data-pencil-name="Catalog Title"
-            className="text-[36px] sm:text-[44px] lg:text-[52px] leading-[1.08] text-[#131110] font-semibold tracking-[-1.6px]"
+            className="text-[36px] sm:text-[46px] lg:text-[52px]/[54px] box-border w-full text-[#131110] font-['Inter_Tight',system-ui,sans-serif] font-semibold tracking-[-1.6px] text-left"
           >
             <span data-pencil-name="Title Line 1" className="block">
-              This week&apos;s picks,
+              Pilihan minggu ini,
             </span>
             <span data-pencil-name="Title Line 2" className="block">
-              sourced by travelers.
+              dibeli oleh traveler kami.
             </span>
           </h2>
         </div>
 
-        {/* Note */}
+        {/* Catalog Note */}
         <div
           data-pencil-name="Catalog Note"
-          className="text-[13px] sm:text-[14px] leading-[22px] max-w-[380px] text-[#5F564F] font-normal"
+          className="text-[13px] sm:text-[14px]/[22px] box-border w-full md:w-[380px] text-[#5F564F] font-[Inter,system-ui,sans-serif] font-normal text-left"
         >
-          Prices are estimates in {currency} and include our 8% service fee. Final cost is confirmed before purchase.
+          Harga merupakan estimasi dalam {currency} dan sudah termasuk biaya jasa 8%. Biaya final dikonfirmasi sebelum pembelian.
         </div>
       </div>
 
       {/* Filter Row */}
       <div
         data-pencil-name="Filter Row"
-        className="box-border w-full h-fit shrink-0 flex flex-row gap-4 justify-between items-center pb-8 sm:pb-[34px] overflow-x-auto no-scrollbar border-b border-[#D3C7BA]/50"
+        className="box-border w-full h-fit shrink-0 flex flex-row gap-4 justify-between items-center pt-8 sm:pt-[40px] overflow-x-auto no-scrollbar"
       >
         {/* Category Pills */}
         <div
@@ -201,22 +191,24 @@ export default function CatalogSection() {
                 type="button"
                 onClick={() => setActiveCategory(cat.label)}
                 data-pencil-name={`Pill / ${cat.label}`}
-                className={`box-border w-fit shrink-0 h-[38px] flex flex-row gap-[7px] px-[16px] justify-start items-center rounded-[19px] transition-all cursor-pointer ${
+                className={`box-border w-fit shrink-0 h-fit flex flex-row gap-[7px] p-[10px_16px] justify-start items-center rounded-[999px] transition-colors cursor-pointer ${
                   isActive
-                    ? "bg-[#131110] text-[#EDE4DD]"
-                    : "bg-[#F7F2EC] text-[#131110] border border-[#D3C7BA] hover:bg-[#EAE2D8]"
+                    ? "bg-[#fec201] border border-[#fec201] shadow-xs"
+                    : "[border:1px_solid_#D3C7BA] hover:bg-[#EAE2D8]/50"
                 }`}
               >
                 <span
                   data-pencil-name="Pill Label"
-                  className="text-[12.5px] font-medium whitespace-nowrap"
+                  className={`text-[12.5px]/[normal] font-[Inter,system-ui,sans-serif] whitespace-nowrap ${
+                    isActive ? "text-[#131110] font-bold" : "text-[#131110] font-normal"
+                  }`}
                 >
                   {cat.label}
                 </span>
                 <span
                   data-pencil-name="Pill Count"
-                  className={`text-[10px] font-normal ${
-                    isActive ? "text-[#EDE4DD]/70" : "text-[#5F564F]"
+                  className={`text-[10px]/[normal] font-[Inter,system-ui,sans-serif] ${
+                    isActive ? "text-[#131110]/70 font-bold" : "text-[#5F564F] font-medium"
                   }`}
                 >
                   {cat.count}
@@ -229,140 +221,138 @@ export default function CatalogSection() {
         {/* Sort */}
         <div
           data-pencil-name="Sort"
-          className="hidden md:flex box-border w-fit shrink-0 h-fit flex-row gap-[6px] justify-start items-center text-[11px] font-semibold tracking-[1.2px] text-[#5F564F] uppercase cursor-pointer"
+          className="hidden md:flex box-border w-fit shrink-0 h-fit flex flex-row gap-[6px] justify-start items-center cursor-pointer select-none"
         >
-          <span data-pencil-name="Sort Label">SORT: POPULAR</span>
-          <svg
-            data-pencil-name="Sort Chevron"
-            viewBox="0 0 12 12"
-            className="w-[12px] h-[12px]"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path d="M3 4.5l3 3 3-3" />
-          </svg>
         </div>
       </div>
 
       {/* Item Grid */}
       <div
         data-pencil-name="Item Grid"
-        className="box-border w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8 sm:pt-[36px]"
+        className="box-border w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] pt-[32px]"
       >
         {filteredProducts.map((p) => (
           <div
             key={p.id}
             data-pencil-name={`Card / ${p.name}`}
-            className="group box-border flex flex-col justify-between bg-transparent transition-all"
+            className="box-border w-full h-[462px] flex flex-col justify-start items-start"
           >
             {/* Media */}
             <div
               data-pencil-name="Media"
-              className="box-border w-full h-[280px] sm:h-[300px] shrink-0 rounded-[2px] overflow-hidden relative bg-center bg-no-repeat bg-cover shadow-sm transition-transform duration-300 group-hover:scale-[1.015]"
+              className="box-border w-full h-[300px] shrink-0 rounded-[2px] overflow-hidden relative bg-center bg-no-repeat bg-cover"
               style={{ backgroundImage: `url('${p.image}')` }}
             >
               {/* Origin Badge */}
               <div
                 data-pencil-name="Origin Badge"
-                className="absolute left-[12px] top-[12px] flex flex-row gap-[5px] px-[9px] py-[6px] justify-start items-center bg-[#F7F2EC]/90 backdrop-blur-sm rounded-[2px] shadow-sm"
+                className="box-border w-fit h-fit absolute left-[12px] top-[12px] flex flex-row gap-[5px] p-[6px_9px] justify-start items-center bg-[#F7F2ECF2] rounded-[2px]"
               >
-                <span data-pencil-name="Badge Flag" className="text-[11px]">
+                <div data-pencil-name="Badge Flag" className="text-[10px]">
                   {p.flag}
-                </span>
-                <span
+                </div>
+                <div
                   data-pencil-name="Badge Code"
-                  className="text-[9.5px] text-[#131110] font-bold tracking-[1.2px]"
+                  className="text-[9.5px]/[normal] text-[#131110] font-[Inter,system-ui,sans-serif] font-bold tracking-[1.2px]"
                 >
                   {p.code}
-                </span>
+                </div>
               </div>
             </div>
 
             {/* Card Body */}
             <div
               data-pencil-name="Card Body"
-              className="box-border w-full flex flex-col justify-start items-start pt-[14px]"
+              className="box-border w-full flex-1 flex flex-col justify-between items-start pt-[16px]"
             >
+              {/* Card Text */}
               <div
-                data-pencil-name="Item Name"
-                className="text-[15.5px] leading-[21px] text-[#131110] font-semibold text-left line-clamp-1"
-              >
-                {p.name}
-              </div>
-              <div
-                data-pencil-name="Item Meta"
-                className="text-[9.5px] text-[#5F564F] font-semibold tracking-[1.4px] uppercase pt-[4px]"
-              >
-                {p.meta}
-              </div>
-            </div>
-
-            {/* Card Rule */}
-            <div
-              data-pencil-name="Card Rule"
-              className="box-border w-full h-[1px] bg-[#D3C7BA] my-[14px]"
-            />
-
-            {/* Card Footer */}
-            <div
-              data-pencil-name="Card Footer"
-              className="box-border w-full flex flex-row justify-between items-center"
-            >
-              {/* Price */}
-              <div
-                data-pencil-name="Price Block"
-                className="box-border flex flex-col justify-start items-start"
+                data-pencil-name="Card Text"
+                className="box-border w-full flex flex-col gap-[7px] justify-start items-start"
               >
                 <div
-                  data-pencil-name="Price"
-                  className="text-[17px] leading-tight text-[#131110] font-semibold tracking-[-0.3px]"
+                  data-pencil-name="Item Name"
+                  className="text-[15.5px]/[21px] box-border w-full text-[#131110] font-['Inter_Tight',system-ui,sans-serif] font-medium tracking-[-0.2px] text-left line-clamp-1"
                 >
-                  {formatPrice(p.priceIdr, p.priceUsd)}
+                  {p.name}
                 </div>
                 <div
-                  data-pencil-name="Price USD"
-                  className="text-[10px] text-[#5F564F] font-medium"
+                  data-pencil-name="Item Meta"
+                  className="text-[9px]/[normal] box-border text-[#5F564F] font-[Inter,system-ui,sans-serif] font-semibold tracking-[1.3px] text-left uppercase whitespace-nowrap"
                 >
-                  {currency === "IDR" ? `≈ $${p.priceUsd}` : `≈ Rp ${p.priceIdr.toLocaleString("id-ID")}`}
+                  {p.meta}
                 </div>
               </div>
 
-              {/* Pre-Order CTA */}
-              <button
-                type="button"
-                onClick={() =>
-                  addToCart({
-                    id: p.id,
-                    name: p.name,
-                    meta: p.meta,
-                    priceIdr: p.priceIdr,
-                    priceUsd: p.priceUsd,
-                    image: p.image,
-                    flag: p.flag,
-                    code: p.code,
-                  })
-                }
-                data-pencil-name="Pre-Order Button"
-                className="box-border h-[38px] flex flex-row gap-[6px] px-[14px] justify-center items-center bg-[#131110] hover:bg-[#2C2622] text-[#F4ECE5] rounded-[2px] transition-colors cursor-pointer"
+              {/* Card Footer */}
+              <div
+                data-pencil-name="Card Footer"
+                className="box-border w-full flex flex-col gap-[12px] justify-start items-start"
               >
-                <span
-                  data-pencil-name="Pre-Order Label"
-                  className="text-[12px] font-medium"
+                <div
+                  data-pencil-name="Card Rule"
+                  className="box-border w-full h-[1px] bg-[#D3C7BA]"
+                />
+
+                <div
+                  data-pencil-name="Price Row"
+                  className="box-border w-full flex flex-row justify-between items-center"
                 >
-                  Pre-Order
-                </span>
-                <svg
-                  data-pencil-name="Pre-Order Arrow"
-                  viewBox="0 0 12 12"
-                  className="w-[12px] h-[12px]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path d="M2.5 6h7m-3-3 3 3-3 3" />
-                </svg>
-              </button>
+                  <div
+                    data-pencil-name="Price Block"
+                    className="box-border flex flex-col gap-[2px] justify-start items-start"
+                  >
+                    <div
+                      data-pencil-name="Price"
+                      className="text-[13.5px]/[normal] text-[#131110] font-[Inter,system-ui,sans-serif] font-semibold text-left whitespace-nowrap"
+                    >
+                      {formatPrice(p.priceIdr, p.priceUsd)}
+                    </div>
+                    <div
+                      data-pencil-name="Price USD"
+                      className="text-[10.5px]/[normal] text-[#5F564F] font-[Inter,system-ui,sans-serif] font-normal text-left whitespace-nowrap"
+                    >
+                      {currency === "IDR" ? `≈ $${p.priceUsd}` : `≈ Rp ${p.priceIdr.toLocaleString("id-ID")}`}
+                    </div>
+                  </div>
+
+                  {/* Pre-Order Button */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      addToCart({
+                        id: p.id,
+                        name: p.name,
+                        meta: p.meta,
+                        priceIdr: p.priceIdr,
+                        priceUsd: p.priceUsd,
+                        image: p.image,
+                        flag: p.flag,
+                        code: p.code,
+                      })
+                    }
+                    data-pencil-name="Pre-Order Button"
+                    className="box-border w-fit shrink-0 h-fit flex flex-row gap-[7px] p-[9px_14px] justify-start items-center bg-[#fec201] hover:bg-[#eab300] text-[#131110] border border-[#fec201] rounded-[2px] transition-colors cursor-pointer group shadow-xs"
+                  >
+                    <span
+                      data-pencil-name="Pre-Order Label"
+                      className="text-[11.5px]/[normal] font-[Inter,system-ui,sans-serif] font-bold text-left whitespace-nowrap"
+                    >
+                      Pre-Order
+                    </span>
+                    <svg
+                      data-pencil-name="Pre-Order Arrow"
+                      viewBox="0 0 12 12"
+                      className="box-border w-[12px] shrink-0 h-[12px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M2.5 9.5l7-7m-6 0h6v6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -370,72 +360,80 @@ export default function CatalogSection() {
         {/* Card 8 / Request Any Item */}
         <div
           data-pencil-name="Card / Request Any Item"
-          className="box-border flex flex-col justify-between p-[28px] bg-[#F7F2EC] border border-[#D3C7BA] rounded-[2px] min-h-[462px] shadow-sm"
+          className="box-border w-full h-[462px] flex flex-col gap-0 p-[28px] justify-between items-start bg-[#F7F2EC] border border-[#D3C7BA] rounded-[2px]"
         >
-          <div className="flex flex-col gap-4">
-            {/* Top Icon */}
+          <div
+            data-pencil-name="Special Top"
+            className="box-border w-full flex flex-row justify-between items-center"
+          >
             <div
-              data-pencil-name="Special Top"
-              className="box-border w-full flex flex-row justify-between items-center"
+              data-pencil-name="Icon Wrap"
+              className="box-border w-[38px] shrink-0 h-[38px] flex justify-center items-center bg-[#fec201]/20 border border-[#fec201]/60 rounded-full"
             >
-              <div
-                data-pencil-name="Icon Wrap"
-                className="box-border w-[38px] shrink-0 h-[38px] flex justify-center items-center border border-[#131110] rounded-full"
+              <svg
+                data-pencil-name="Link Icon"
+                viewBox="0 0 16 16"
+                className="box-border w-[16px] shrink-0 h-[16px] text-[#131110]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
               >
-                <svg
-                  data-pencil-name="Link Icon"
-                  viewBox="0 0 24 24"
-                  className="w-[18px] h-[18px] text-[#131110]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                >
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                </svg>
-              </div>
-
-              <span
-                data-pencil-name="Special Label"
-                className="text-[9.5px] text-[#5F564F] font-semibold tracking-[1.4px] uppercase"
-              >
-                ANY SHOP, ANY CITY
-              </span>
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+              </svg>
             </div>
-
-            {/* Special Title */}
-            <div className="pt-2">
-              <h3
-                data-pencil-name="Special Title"
-                className="text-[22px] leading-[26px] text-[#131110] font-semibold"
-              >
-                Can&apos;t find it here?
-              </h3>
-              <p
-                data-pencil-name="Special Body"
-                className="text-[13.5px] leading-[21px] text-[#5F564F] pt-2"
-              >
-                Paste a link from any store — even ones that don&apos;t ship to Indonesia. A traveler picks it up and we handle the rest.
-              </p>
+            <div
+              data-pencil-name="Special Label"
+              className="text-[9px]/[normal] text-[#5F564F] font-[Inter,system-ui,sans-serif] font-semibold tracking-[1.3px] uppercase whitespace-nowrap"
+            >
+              TOKO APA PUN, KOTA MANA PUN
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleCustomLinkSubmit} className="flex flex-col gap-3 pt-4">
+          <div
+            data-pencil-name="Special Middle"
+            className="box-border w-full flex flex-col gap-[10px] justify-start items-start"
+          >
+            <div
+              data-pencil-name="Special Title"
+              className="text-[24px]/[28px] text-[#131110] font-['Inter_Tight',system-ui,sans-serif] font-semibold tracking-[-0.6px]"
+            >
+              Tidak menemukan yang dicari?
+            </div>
+            <div
+              data-pencil-name="Special Body"
+              className="text-[12.5px]/[19px] text-[#5F564F] font-[Inter,system-ui,sans-serif] font-normal"
+            >
+              Tempel tautan dari toko mana saja — bahkan yang tidak melayani pengiriman ke Indonesia. Traveler kami yang akan membelikannya langsung untuk Anda.
+            </div>
+          </div>
+
+          <form
+            onSubmit={handleCustomLinkSubmit}
+            data-pencil-name="Link Input"
+            className="box-border w-full h-[44px] flex flex-row gap-0 px-[14px] justify-between items-center bg-[#EDE4DD] border border-[#D3C7BA] rounded-[2px] cursor-pointer"
+          >
             <input
               type="text"
               value={customLink}
               onChange={(e) => setCustomLink(e.target.value)}
-              placeholder="https://store.com/item"
-              className="w-full h-[44px] px-3 bg-white border border-[#D3C7BA] rounded-[2px] text-[13px] text-[#131110] placeholder-[#5F564F]/60 outline-none focus:border-[#131110]"
+              placeholder="https://toko.com/produk"
+              className="text-[12px] flex-1 bg-transparent text-[#131110] placeholder-[#5F564F] outline-none font-[Inter,system-ui,sans-serif]"
             />
             <button
               type="submit"
-              className="w-full h-[44px] bg-[#131110] hover:bg-[#2C2622] text-[#F4ECE5] text-[13px] font-medium rounded-[2px] transition-colors cursor-pointer flex justify-center items-center gap-2"
+              className="p-1.5 bg-[#fec201] hover:bg-[#e5ae00] text-[#131110] rounded-[2px] transition-colors cursor-pointer"
+              title="Kirim tautan"
             >
-              <span>Get instant quote</span>
-              <svg viewBox="0 0 12 12" className="w-[12px] h-[12px]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M2.5 6h7m-3-3 3 3-3 3" />
+              <svg
+                data-pencil-name="Input Arrow"
+                viewBox="0 0 14 14"
+                className="box-border w-[14px] shrink-0 h-[14px]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M2.5 7h9m-4-4 4 4-4 4" />
               </svg>
             </button>
           </form>

@@ -13,7 +13,6 @@ export default function Navbar() {
     setRequestUrl,
   } = useJastip();
   const [searchInput, setSearchInput] = useState("");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const totalCartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -45,7 +44,7 @@ export default function Navbar() {
   return (
     <header
       data-pencil-name="Navbar"
-      className="sticky top-0 z-40 bg-[#EDE4DD]/95 backdrop-blur-sm box-border w-full h-[78px] shrink-0 flex flex-row gap-4 px-4 sm:px-8 lg:px-[64px] justify-between items-center border-b border-[#D3C7BA]"
+      className="box-border w-full h-[78px] shrink-0 flex flex-row gap-4 px-4 sm:px-8 lg:px-[64px] justify-between items-center border-b border-[#D3C7BA] bg-[#EDE4DD]"
     >
       {/* Brand */}
       <div
@@ -55,28 +54,28 @@ export default function Navbar() {
       >
         <div
           data-pencil-name="Logo Mark"
-          className="box-border w-[26px] shrink-0 h-[26px] flex flex-row justify-center items-center bg-[#131110] rounded-[13px]"
+          className="box-border w-[26px] shrink-0 h-[26px] flex flex-row justify-center items-center bg-[#fec201] rounded-[13px] shadow-[0_1px_4px_rgba(254,194,1,0.35)]"
         >
           <span
             data-pencil-name="Mark Letter"
-            className="text-[13px] text-[#EDE4DD] font-semibold tracking-normal"
+            className="text-[13px] text-[#131110] font-['Inter_Tight',system-ui,sans-serif] font-black"
           >
             J
           </span>
         </div>
         <div
           data-pencil-name="Wordmark"
-          className="text-[17px] text-[#131110] font-bold tracking-[3.4px]"
+          className="text-[17px] text-[#131110] font-['Inter_Tight',system-ui,sans-serif] font-bold tracking-[3.4px]"
         >
           JASTIP
         </div>
       </div>
 
-      {/* Search Bar */}
+      {/* Search Input Bar */}
       <form
         onSubmit={handlePasteSubmit}
         data-pencil-name="Search"
-        className="hidden md:flex box-border flex-1 max-w-[480px] h-[44px] flex-row gap-[10px] pl-[18px] pr-[7px] justify-between items-center bg-[#F7F2EC] border border-[#D3C7BA] rounded-[22px] transition-all focus-within:border-[#131110] focus-within:shadow-sm"
+        className="hidden md:flex box-border flex-1 max-w-[480px] h-[44px] flex-row gap-[10px] pl-[18px] pr-[7px] justify-between items-center bg-[#F7F2EC] border border-[#D3C7BA] rounded-[22px]"
       >
         <svg
           data-pencil-name="Search Icon"
@@ -93,21 +92,21 @@ export default function Navbar() {
           type="text"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          placeholder="Paste a product link from anywhere"
-          className="text-[13px] box-border flex-1 text-[#131110] placeholder-[#5F564F] bg-transparent outline-none font-sans"
+          placeholder="Tempel tautan produk dari mana saja"
+          className="text-[13px] box-border flex-1 text-[#131110] placeholder-[#5F564F] bg-transparent outline-none font-[Inter,system-ui,sans-serif]"
         />
 
         <button
           type="button"
           onClick={handlePasteClip}
           data-pencil-name="Paste Chip"
-          className="box-border w-fit shrink-0 h-fit flex flex-row px-[10px] py-[6px] justify-start items-center bg-[#EDE4DD] hover:bg-[#E2D5CA] rounded-[14px] transition-colors cursor-pointer"
+          className="box-border w-fit shrink-0 h-fit flex flex-row px-[10px] py-[6px] justify-start items-center bg-[#fec201] hover:bg-[#eab300] text-[#131110] rounded-[14px] transition-colors cursor-pointer shadow-xs"
         >
           <span
             data-pencil-name="Paste Label"
-            className="text-[9px] text-[#131110] font-semibold tracking-[1.3px]"
+            className="text-[9px] text-[#131110] font-[Inter,system-ui,sans-serif] font-bold tracking-[1.3px]"
           >
-            PASTE
+            TEMPEL
           </span>
         </button>
       </form>
@@ -122,12 +121,12 @@ export default function Navbar() {
           type="button"
           onClick={toggleCurrency}
           data-pencil-name="Currency"
-          className="box-border w-fit shrink-0 h-fit flex flex-row gap-[4px] justify-start items-center hover:opacity-80 transition-opacity p-1 cursor-pointer"
-          title="Click to toggle currency"
+          className="box-border w-fit shrink-0 h-fit flex flex-row gap-[4px] justify-start items-center hover:opacity-80 transition-opacity cursor-pointer"
+          title="Ubah mata uang (IDR / USD)"
         >
           <span
             data-pencil-name="Currency Label"
-            className="text-[10.5px] text-[#131110] font-bold tracking-[1.2px]"
+            className="text-[10.5px] text-[#131110] font-[Inter,system-ui,sans-serif] font-bold tracking-[1.2px]"
           >
             {currency}
           </span>
@@ -143,27 +142,27 @@ export default function Navbar() {
           </svg>
         </button>
 
-        {/* Sign In */}
+        {/* Action Button */}
         <button
           type="button"
           onClick={() => setIsRequestModalOpen(true)}
           data-pencil-name="Sign In"
-          className="text-[13px] text-[#131110] font-normal hover:underline whitespace-nowrap hidden sm:inline-block cursor-pointer"
+          className="px-3.5 py-1.5 bg-[#fec201] hover:bg-[#eab300] text-[#131110] text-[12.5px] font-bold rounded-[2px] transition-colors whitespace-nowrap hidden sm:inline-block cursor-pointer shadow-xs"
         >
-          Sign in
+          Titip Sekarang
         </button>
 
         {/* Wishlist */}
         <button
           type="button"
-          onClick={() => {}}
-          className="p-1 hover:opacity-75 transition-opacity cursor-pointer"
+          onClick={() => setIsRequestModalOpen(true)}
+          className="hover:opacity-75 transition-opacity cursor-pointer p-0.5"
           aria-label="Wishlist"
         >
           <svg
             data-pencil-name="Wishlist"
             viewBox="0 0 24 24"
-            className="box-border w-[18px] shrink-0 h-[18px] text-[#131110]"
+            className="box-border w-[17px] shrink-0 h-[17px] text-[#131110]"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.8"
@@ -172,18 +171,18 @@ export default function Navbar() {
           </svg>
         </button>
 
-        {/* Cart Bag */}
+        {/* Cart */}
         <button
           type="button"
           onClick={() => setIsCartOpen(true)}
           data-pencil-name="Cart"
-          className="box-border w-fit shrink-0 h-fit flex flex-row gap-[7px] justify-start items-center p-1 hover:opacity-75 transition-opacity cursor-pointer"
-          aria-label="Cart"
+          className="box-border w-fit shrink-0 h-fit flex flex-row gap-[7px] justify-start items-center hover:opacity-75 transition-opacity cursor-pointer p-0.5"
+          aria-label="Keranjang Pre-Order"
         >
           <svg
             data-pencil-name="Cart Icon"
             viewBox="0 0 24 24"
-            className="box-border w-[18px] shrink-0 h-[18px] text-[#131110]"
+            className="box-border w-[17px] shrink-0 h-[17px] text-[#131110]"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.8"
@@ -192,67 +191,23 @@ export default function Navbar() {
             <path d="M3 6h18" />
             <path d="M16 10a4 4 0 0 1-8 0" />
           </svg>
-          <span
-            data-pencil-name="Cart Count"
-            className="text-[11.5px] text-[#131110] font-semibold"
-          >
-            {totalCartCount}
-          </span>
-        </button>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-1 text-[#131110]"
-          aria-label="Toggle navigation menu"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
+          {totalCartCount > 0 ? (
+            <span
+              data-pencil-name="Cart Count"
+              className="min-w-[19px] h-[19px] px-1 flex items-center justify-center rounded-full bg-[#fec201] text-[#131110] text-[10px] font-[Inter,system-ui,sans-serif] font-bold shadow-sm"
+            >
+              {totalCartCount}
+            </span>
+          ) : (
+            <span
+              data-pencil-name="Cart Count"
+              className="text-[11.5px] text-[#131110] font-[Inter,system-ui,sans-serif] font-semibold"
+            >
+              0
+            </span>
+          )}
         </button>
       </div>
-
-      {/* Mobile Drawer/Search dropdown */}
-      {mobileMenuOpen && (
-        <div className="absolute top-[78px] left-0 w-full bg-[#EDE4DD] border-b border-[#D3C7BA] p-4 flex flex-col gap-3 md:hidden z-50 shadow-md">
-          <form onSubmit={handlePasteSubmit} className="flex h-[42px] px-3 justify-between items-center bg-[#F7F2EC] border border-[#D3C7BA] rounded-[21px]">
-            <input
-              type="text"
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-              placeholder="Paste a product link from anywhere"
-              className="text-[12px] flex-1 text-[#131110] placeholder-[#5F564F] bg-transparent outline-none"
-            />
-            <button
-              type="submit"
-              className="px-2 py-1 bg-[#EDE4DD] text-[9px] font-semibold tracking-wider rounded-lg"
-            >
-              GO
-            </button>
-          </form>
-          <div className="flex justify-between items-center pt-2 border-t border-[#D3C7BA]">
-            <button
-              onClick={() => {
-                toggleCurrency();
-                setMobileMenuOpen(false);
-              }}
-              className="text-xs font-semibold"
-            >
-              Currency: {currency}
-            </button>
-            <button
-              onClick={() => {
-                setIsRequestModalOpen(true);
-                setMobileMenuOpen(false);
-              }}
-              className="text-xs font-medium underline"
-            >
-              Custom Request
-            </button>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

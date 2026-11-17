@@ -16,9 +16,9 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "JASTIP — Shop the World, Delivered to You",
+  title: "JASTIP — Belanja dari Seluruh Dunia, Diantar ke Pintu Anda",
   description:
-    "Tell us what you want from anywhere on earth. We buy it in store, inspect it, and bring it home with a verified traveler — no freight forwarders, no guesswork.",
+    "Titip barang apa pun dari mana saja di dunia. Dibeli langsung di toko oleh traveler terverifikasi, diperiksa, dan dibawa pulang — tanpa freight forwarder, tanpa ribet.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#EDE4DD] text-[#131110]">

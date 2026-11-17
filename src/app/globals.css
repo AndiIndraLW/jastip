@@ -9,10 +9,16 @@
   --color-brand-border: #D3C7BA;
   --color-brand-card: #F7F2EC;
   --color-brand-red: #F2381A;
+  --color-brand-yellow: #fec201;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: #fec201;
+  color: #131110;
 }
 
 html, body {
@@ -22,12 +28,13 @@ html, body {
   color: #131110;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -35,10 +42,84 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D3C7BA;
+  background: #C8BCB0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B4A596;
+  background: #A99B8E;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes pulseBorder {
+  0%, 100% { border-color: rgba(242, 56, 26, 0.3); }
+  50% { border-color: rgba(242, 56, 26, 0.9); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes flightDash {
+  to { stroke-dashoffset: -24; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+.animate-float-soft {
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 2s infinite ease-in-out;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.flight-path {
+  stroke-dasharray: 4, 4;
+  animation: flightDash 1.2s linear infinite;
+}
+
+/* Card hover glow & 3D tilt feel */
+.card-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(19, 17, 16, 0.12);
+}
+
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom-target {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-zoom-container:hover .img-zoom-target {
+  transform: scale(1.05);
 }
